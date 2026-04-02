@@ -27,7 +27,7 @@ export function About() {
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-[var(--color-gold)]/30">
               <Image
-                src="/images/about.jpeg"
+                src="/images/about.PNG"
                 alt="Mujtaba Hassan with Sony A3 camera and DJI drone controller"
                 fill
                 className="object-cover object-top"

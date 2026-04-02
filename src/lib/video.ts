@@ -38,13 +38,16 @@ export function getEmbedUrl(url: string): string {
 
 /**
  * Get thumbnail URL for a video.
- * For Google Drive: auto-generates from file ID.
- * For Vimeo: uses the provided thumbnailUrl.
+ * If a custom thumbnailUrl is provided, it's used.
+ * Otherwise, it auto-generates one for Google Drive links.
  */
-export function getThumbnailUrl(videoUrl: string, fallbackThumbnail?: string): string {
-  const gdriveId = getGDriveFileId(videoUrl)
-  if (gdriveId) {
-    return `https://drive.google.com/thumbnail?id=${gdriveId}&sz=w800`
+export function getThumbnailUrl(videoUrl: string, customThumbnail?: string): string {
+  if (customThumbnail) {
+    return customThumbnail;
   }
-  return fallbackThumbnail ?? ''
+  const gdriveId = getGDriveFileId(videoUrl);
+  if (gdriveId) {
+    return `https://drive.google.com/thumbnail?id=${gdriveId}&sz=w800`;
+  }
+  return ''; // Should not happen if thumbnailUrl is always provided for non-gdrive
 }

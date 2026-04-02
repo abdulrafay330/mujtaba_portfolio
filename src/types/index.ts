@@ -1,4 +1,4 @@
-export type VideoCategory = 'all' | 'bahria' | 'automotive' | 'portrait'
+export type VideoCategory = 'all' | 'cinematic' | 'automotive' | 'portrait'
 
 export interface Video {
   id: string

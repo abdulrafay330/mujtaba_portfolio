@@ -17,8 +17,6 @@ const VideoLightbox = dynamic(() => import('@/components/VideoLightbox'), { ssr:
 const filterCategories: { value: VideoCategory; label: string }[] = [
   { value: 'all', label: 'All' },
   { value: 'cinematic', label: 'Cinematic' },
-  { value: 'automotive', label: 'Automotive' },
-  { value: 'portrait', label: 'Portrait' },
 ];
 
 export function Portfolio() {
